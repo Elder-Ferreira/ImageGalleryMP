@@ -1,0 +1,36 @@
+﻿@model List<Product>
+
+
+<h2>Lista de produtos</h2>
+
+<div>
+    <a class="btn btn-primary" asp-controller="Products" asp-action="Create">Novo Produto</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Nome</td>
+                <td><img src="/products/@product.ImageFileName" width="75" /></td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Products" asp-action="Create">Novo Produto</a>
+                    <a class="btn btn-primary" asp-controller="Products" asp-action="Create">Novo Produto</a>
+                </td>
+            </tr>
+        }
+        
+
+    </tbody>
+
+</table>
